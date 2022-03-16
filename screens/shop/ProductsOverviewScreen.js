@@ -1,5 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { FlatList, Button, Platform, StyleSheet } from "react-native";
+import {
+  FlatList,
+  Button,
+  Platform,
+  StyleSheet,
+  View,
+  Text,
+  } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
@@ -72,8 +79,8 @@ const ProductsOverviewScreen = (props) => {
   }
   return (
     <FlatList
-    onRefresh={loadedProducts}
-    refreshing={isRefreshing}
+      onRefresh={loadedProducts}
+      refreshing={isRefreshing}
       data={products}
       keyExtractor={(item) => item.id}
       renderItem={(itemData) => (
